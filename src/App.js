@@ -23,6 +23,11 @@ function Counter() {
     setCount((c) => c + step);
   };
 
+  function handleReset() {
+    setStep(0);
+    setCount(0);
+  }
+
   return (
     <>
       <input
@@ -56,6 +61,12 @@ function Counter() {
         </span>
         <span>{date.toDateString()}</span>
       </p>
+      <button
+        style={count === 0 && step === 0 ? { display: "none" } : {}}
+        onClick={handleReset}
+      >
+        Reset
+      </button>
     </>
   );
 }
